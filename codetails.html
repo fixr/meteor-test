@@ -1,0 +1,21 @@
+<head>
+  <title>Codetails App</title>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>Charlas:</h1>
+    </header>
+
+    <ul>
+      {{#each talks}}
+        {{> talk}}
+      {{/each}}
+    </ul>
+  </div>
+</body>
+
+<template name="talk">
+  <li>{{text}}</li>
+</template>
