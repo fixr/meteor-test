@@ -21,6 +21,16 @@
   </div>
 </body>
 
+<!--
 <template name="talk">
   <li>{{ title }}</li>
+</template>
+-->
+
+<template name="talk">
+  <li class="{{#if checked}}checked{{/if}}">
+    <button class="delete">&times;</button>
+    <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
+    <span class="text">{{ title }}</span>
+  </li>
 </template>
