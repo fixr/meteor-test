@@ -8,6 +8,17 @@
 //    real-time ability
 // 6. Inserting values to DB and sorting on the view
 // 7. Update and delete events
+// 8. Mobile
+//    # Android
+//    meteor install-sdk android
+//    meteor add-platform android
+//    meteor run android # emulator
+//    meteor run android-device [--mobile-server codetails.meteor.com]
+//    # iOS
+//    meteor install-sdk ios
+//    meteor add-platform ios
+//    meteor run ios # emulator
+//    meteor run ios-device [--mobile-server codetails.meteor.com]
 
 
 Talks = new Mongo.Collection("talks");
