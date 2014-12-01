@@ -4,19 +4,23 @@
 
 <body>
   <div class="container">
+
+    <div id="logo"></div>
+
+    {{> loginButtons}}
+
     <header>
+
       <h1>Ponencias</h1>
 
       <label class="hide-completed">
         <input type="checkbox" checked="{{ hideCompleted }}" />
-        Ocultar las pasadas
+        Ocultar las anteriores
       </label>
-
-      {{> loginButtons}}
 
       {{#if currentUser}}
         <form class="new-talk">
-          <input type="text" name="title" placeholder="Agregar una nueva ponencia" />
+          <input type="text" name="title" placeholder="Agregar una ponencia" />
         </form>
       {{/if}}
 
