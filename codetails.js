@@ -34,7 +34,19 @@ if (Meteor.isClient) {
     // ]
 
     talks: function () {
-      return Talks.find({}, { sort: { createdAt: -1 }});
+      if (Session.get("hideCompleted")) {
+        return Talks.find({ checked: { $ne: true } }, { sort: { createdAt: -1 } });
+      } else {
+        return Talks.find({}, { sort: { createdAt: -1 }});
+      }
+    },
+
+    hideCompleted: function () {
+      return Session.get("hideCompleted");
+    },
+
+    incompleteCount: function () {
+      return Talks.find({ checked: { $ne: true } }).count();
     }
   });
 
@@ -58,6 +70,10 @@ if (Meteor.isClient) {
 
       // Prevent default form submit
       return false;
+    },
+
+    "change .hide-completed input": function (event) {
+      Session.set("hideCompleted", event.target.checked);
     }
   });
 
