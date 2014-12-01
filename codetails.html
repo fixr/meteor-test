@@ -5,16 +5,20 @@
 <body>
   <div class="container">
     <header>
-      <h1>Ponencias ({{incompleteCount}})</h1>
+      <h1>Ponencias</h1>
 
       <label class="hide-completed">
         <input type="checkbox" checked="{{ hideCompleted }}" />
         Ocultar las pasadas
       </label>
 
-      <form class="new-talk">
-        <input type="text" name="title" placeholder="Agregar una nueva ponencia" />
-      </form>
+      {{> loginButtons}}
+
+      {{#if currentUser}}
+        <form class="new-talk">
+          <input type="text" name="title" placeholder="Agregar una nueva ponencia" />
+        </form>
+      {{/if}}
 
     </header>
 
@@ -35,7 +39,14 @@
 <template name="talk">
   <li class="{{#if checked}}checked{{/if}}">
     <button class="delete">&times;</button>
-    <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
-    <span class="text">{{ title }}</span>
+    <div class="pic left">
+      <img src="{{ picture }}">
+    </div>
+    <div class="item left">
+      <input type="checkbox" checked="{{ checked }}" class="toggle-checked" />
+      <span class="text"><strong>{{ username }}</strong> - {{text}}</span>
+      <span class="text">{{ title }}</span>
+    </div>
+    <div class="clear"></div>
   </li>
 </template>

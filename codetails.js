@@ -20,6 +20,9 @@
 //    meteor run ios # emulator
 //    meteor run ios-device [--mobile-server codetails.meteor.com]
 // 9. Sessions (reactive data store on client)
+// 10. Smart Packages: auth
+//    meteor add accounts-password accounts-twitter accounts-ui
+//    Boilerplate
 
 
 Talks = new Mongo.Collection("talks");
@@ -63,7 +66,10 @@ if (Meteor.isClient) {
 
       Talks.insert({
         title: title,
-        createdAt: new Date() // current time
+        createdAt: new Date(),
+        owner: Meteor.userId(),
+        username: Meteor.user().services.twitter.screenName,
+        picture: Meteor.user().services.twitter.profile_image_url
       });
 
       // Clear form

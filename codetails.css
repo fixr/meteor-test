@@ -125,3 +125,20 @@ header .hide-completed {
   }
 }
 
+.left {
+  float: left;
+}
+
+.pic {
+  width: 60px;
+}
+
+.item {
+
+}
+
+.clear {
+  clear: both;
+}
+
+
