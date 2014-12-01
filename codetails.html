@@ -4,16 +4,19 @@
 
 <body>
   <div class="container">
+
     <div id="logo"></div>
+
+    {{> loginButtons}}
+
     <header>
+
       <h1>Ponencias</h1>
 
       <label class="hide-completed">
         <input type="checkbox" checked="{{ hideCompleted }}" />
         Ocultar las anteriores
       </label>
-
-      {{> loginButtons}}
 
       {{#if currentUser}}
         <form class="new-talk">
