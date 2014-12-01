@@ -19,6 +19,7 @@
 //    meteor add-platform ios
 //    meteor run ios # emulator
 //    meteor run ios-device [--mobile-server codetails.meteor.com]
+// 9. Sessions (reactive data store on client)
 
 
 Talks = new Mongo.Collection("talks");
